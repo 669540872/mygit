@@ -1,0 +1,5 @@
+package 网约车线程;
+
+public class TaxiProvider {
+
+}

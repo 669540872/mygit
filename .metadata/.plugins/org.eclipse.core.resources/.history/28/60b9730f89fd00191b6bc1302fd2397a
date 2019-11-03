@@ -1,0 +1,14 @@
+import car.*;
+import factory.*;
+import utility.*;
+import 网约车线程。*；
+
+public class Main{
+	public static void main(String args[]){
+		Car car;
+		Factory factory;
+		factory = (Factory)XMLUtil.getBean();
+		car = factory.produceCar();
+		car.getRatio();
+	}
+}

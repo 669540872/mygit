@@ -1,0 +1,47 @@
+package xiancheng;
+
+import car.*;
+import factory.*;
+import utility.*;
+
+public class TaxiBase {
+     private int[] cars=new int[10];
+     private int inPos,outPos;
+     private int count;
+     public synchronized void come() {
+    	 try {
+    		 while(count==cars.length) {
+    			 this.wait();
+    		 }
+    		 Factory factory1=(Factory)XMLUtil.getBean();
+    		 for(int i=0;i<10;i++) {
+    			 cars[i]=factory1.produceCar();
+    		 }
+    		 System.out.println("车辆"+inPos+"，"+cars[inPos].toString()+"入库！");
+    		 inPos++;
+    		 if(inPos==cars.length) {
+    			 count++;
+    		 }
+    		 this.notify();
+    	 }catch(Exception e) {
+    		 e.printStackTrace();
+    	 }
+     }
+     public synchronized void go(){
+    	 try {
+    		 while(count==0) {
+    			 this.wait();
+    		 }
+    		 int date=cars[outPos];
+    		 System.out.println("车辆"+outPos+cars[outPos].toString()+"出库，计费费率"cars[outPos].gertRatio());
+    		 cars[outPos]=0;
+    		 outPos++;
+    		 if(count==0) {
+    			 count--;
+    		 }
+    		 this.notify();
+    	 }catch(Exception e) {
+    		 e.printStackTrace();
+    	 }
+     }
+}

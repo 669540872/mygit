@@ -1,0 +1,8 @@
+package car;
+
+public class BMW implements Car{
+	final float rate1=200.0f;
+    public void getRatio() {
+    	System.out.println(rate1);
+    }
+}

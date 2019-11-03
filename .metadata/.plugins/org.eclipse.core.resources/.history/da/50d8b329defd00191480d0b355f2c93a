@@ -1,0 +1,16 @@
+package car;
+
+public class BMW implements Car{
+	final float rate1=200.0f;
+    public void getRatio() {
+    	Name3 name=new Name3();
+    	System.out.println(rate1);
+    	System.out.println(name.toString()
+    			);
+    }
+}
+class Name3{
+	public String toString() {
+		return "BMW";
+	}
+}

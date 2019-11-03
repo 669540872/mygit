@@ -1,0 +1,5 @@
+package Example5122;
+
+class Ticket1 implements Runnable {
+    
+}

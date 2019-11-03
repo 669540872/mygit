@@ -1,0 +1,15 @@
+package car;
+
+public class Audi implements Car {
+    final float rate3=400.0f;
+    public void getRatio() {
+    	Name name=new Name();
+    	System.out.println(rate3); 
+    	System.out.println(name.toString());
+    }
+}
+class Name{
+	public String toString() {
+    	return "Audi";
+    }
+}

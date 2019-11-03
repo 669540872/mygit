@@ -1,0 +1,13 @@
+package xiancheng;
+
+class TaxiRenter implements Runnable {
+    private TaxiBase tb;
+    TaxiRenter(TaxiBase tb){
+    	this.tb=tb;
+    }
+    public void run() {
+    	while(true) {
+    		tb.go();
+    	}
+    }
+}
