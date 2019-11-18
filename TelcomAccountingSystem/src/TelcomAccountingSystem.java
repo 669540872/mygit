@@ -1,7 +1,4 @@
-import rate.*;
 import telcomUser.TelcomUser;
-import company.*;
-
 
 public class TelcomAccountingSystem {
 
